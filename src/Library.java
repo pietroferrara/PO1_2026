@@ -5,6 +5,6 @@ public class Library {
         book.title =
                 "The Name of the Rose";
         book.buyCopies(2);
-        book.lend();
+        //book.lend();
     }
 }

@@ -1,6 +1,6 @@
 public class Book {
     String title;
-    String author;
+    Author author;
     //copies >= 0 && available <= copies
     int copies;
     //available >= 0 && available <= copies
@@ -13,20 +13,31 @@ public class Book {
         }
     }
 
-    boolean lend() {
+    boolean lend(Member m) {
         if(available > 0) {
-            available = available - 1;
-            return true;
+            if (m.borrow()) {
+                available = available - 1;
+                //m.loans = m.loans + 1;
+                return true;
+            }
+            else return false;
         }
         else return false;
     }
 
-    boolean returnBook() {
+    boolean returnBook(Member m) {
         if(available < copies) {
-            available = available + 1;
-            return true;
+            if(m.returnBook()) {
+                available = available + 1;
+                return true;
+            }
+            else return false;
         }
         else return false;
+    }
+
+    String description() {
+        return title + " by " + author.name + " " + author.surname;
     }
 
 }
