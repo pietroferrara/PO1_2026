@@ -2,14 +2,14 @@ public class Member {
     String name;
     String surname;
     int birthYear;
-    static int numberOfMembers = 10;
+    static int numberOfMembers = 1;
     int cardNumber = incrementMembers();
 
     int maxLoans = 6;
     int loans = 0;
 
     static {
-        System.out.println("I am initializing the library, no member so far");
+        //System.out.println("I am initializing the library, no member so far");
         Member.numberOfMembers = 1;
     }
 
