@@ -1,3 +1,5 @@
+package it.unive.dais.po1.meal;
+
 public class Menu {
     double totalCost = 0;
     int numberOfDishes = 0;

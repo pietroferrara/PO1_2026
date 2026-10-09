@@ -1,3 +1,5 @@
+package it.unive.dais.po1.meal;
+
 public class Dish {
     final String name;
     final Ingredient main;
@@ -21,7 +23,7 @@ public class Dish {
     Dish(Ingredient main, double kg) {
         double convertiongrams = kg * 1000;
         System.out.println("grams: " + convertiongrams);
-        this("Dish number "+Dish.numberOfDishes, main, convertiongrams);
+        this("it.unive.dais.po1.meal.Dish number "+Dish.numberOfDishes, main, convertiongrams);
     }
 
     double cost() {

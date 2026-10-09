@@ -1,3 +1,5 @@
+package it.unive.dais.po1.library;
+
 public class Member {
     String name;
     String surname;
