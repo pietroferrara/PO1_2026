@@ -1,6 +1,6 @@
 package it.unive.dais.po1.ticketingplatform.event;
 
-class Venue {
+public class Venue {
     private final String name;
     private final int max_capacity;
 
@@ -15,7 +15,7 @@ class Venue {
         return name;
     }
 
-    int getMax_capacity() {
+    public int getMax_capacity() {
         return max_capacity;
     }
 }

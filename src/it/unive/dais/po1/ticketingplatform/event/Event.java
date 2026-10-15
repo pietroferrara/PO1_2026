@@ -1,6 +1,5 @@
 package it.unive.dais.po1.ticketingplatform.event;
 
-import it.unive.dais.po1.ticketingplatform.ticket.Ticket;
 
 public class Event {
     private int seats;
@@ -24,15 +23,6 @@ public class Event {
                 venue.getMax_capacity();
     }
 
-    //Sell a seat: return its ticket, or null
-    public Ticket sellSeat() {
-        if(this.seats <= 0)
-            return null;
-        else {
-            this.seats = this.seats - 1;
-            return new Ticket(this, this.venue.getMax_capacity()-(this.seats));
-        }
-    }
 
     //Give back a sold seat
     public void refund() {
@@ -44,8 +34,21 @@ public class Event {
         return this.seats;
     }
 
+    public int getOccupiedSeats() {
+        return this.venue.getMax_capacity() - this.getAvailableSeats();
+    }
+
     public boolean isSameVenueOf(Event e) {
         return this.venue==e.venue;
+    }
+
+    public Venue getVenue() {
+        return venue;
+    }
+
+    public void decreaseSeats() {
+        if(this.seats>=0)
+            this.seats = this.seats - 1;
     }
 }
 
