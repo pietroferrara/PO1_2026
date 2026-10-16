@@ -1,9 +1,23 @@
 package it.unive.dais.po1.spotify;
 
+/**
+ * A player whose volume can be changed
+ */
 public class Player {
     private int volume=0;
     private static final int MAX_VOLUME=100;
 
+    /**
+     * Creates a player with a volume of 0
+     */
+    public Player() {}
+
+    /**
+     * Sets the volume of the player.
+     *
+     * @param volume the new volume
+     * @return true if the volume is set, false otherwise
+     */
         public boolean setVolume(int volume) {
             //The volume must be a positive value
             if(volume < 0)
@@ -19,7 +33,13 @@ public class Player {
             }
             else return false;
         }
-        public int getVolume() {
+
+    /**
+     * It returns the volume of the player.
+     *
+     * @return the volume of the player
+     */
+    public int getVolume() {
             return this.getVolume();
         }
 }

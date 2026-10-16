@@ -12,6 +12,10 @@ public class Track {
     /**
      * Creates a track with the given title,
      * artist, and duration in seconds.
+     *
+     * @param name the track's title
+     * @param artist the track's artist
+     * @param seconds the track's duration, in seconds
      */
     public Track(String name, String artist, int seconds) {
         this.name = name;
@@ -21,6 +25,8 @@ public class Track {
 
     /**
      * The length of the track, in seconds.
+     *
+     * @return the track's length, in seconds
      */
     public int getLength() {
         return seconds;
