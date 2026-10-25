@@ -1,6 +1,6 @@
 package it.unive.dais.po1.smartdevices;
 
-public class Device {
+public abstract class Device {
     private final String name;
     protected boolean on = false;
     private Room room;
@@ -8,8 +8,14 @@ public class Device {
         this.name = name;
         this.room = room;
     }
+
+    public abstract int getWatts();
+
+
     public void turnOn() { this.on = true; }
-    public void turnOff() { this.on = false; }
+    public final void turnOff() { this.on = false; }
+
+
 
     public String getName() {
         return name;
@@ -18,7 +24,7 @@ public class Device {
         return on;
     }
 
-    public String status() {
+    protected String status() {
         return "Device " + this.name + " is " + (this.on ? "on" : "off");
     }
 

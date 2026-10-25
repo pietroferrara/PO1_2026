@@ -6,6 +6,9 @@ public class Runner {
         Square s = new Square(2);
         Rectangle r = new Rectangle(2, 3);
         System.out.println(s.getPerimeter());
-        System.out.print(r.getPerimeter());
+        System.out.println(r.getPerimeter());
+        System.out.println(s.getArea());
+        System.out.println(r.getArea());
+
     }
 }

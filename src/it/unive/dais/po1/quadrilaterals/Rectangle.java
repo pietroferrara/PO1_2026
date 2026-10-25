@@ -5,6 +5,7 @@ public class Rectangle extends Quadrilateral {
         super(edge1, edge2, edge1, edge2);
     }
 
+    @Override
     public double getArea() {
         return this.edge1*this.edge2;
     }

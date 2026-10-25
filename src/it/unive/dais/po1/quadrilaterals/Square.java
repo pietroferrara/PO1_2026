@@ -5,6 +5,7 @@ public class Square extends Quadrilateral {
         super(edge, edge, edge, edge);
     }
 
+    @Override
     public double getArea() {
         return this.edge1*this.edge1;
     }

@@ -1,6 +1,6 @@
 package it.unive.dais.po1.quadrilaterals;
 
-public class Quadrilateral {
+public abstract class Quadrilateral {
     protected double edge1, edge2, edge3, edge4;
 
     public Quadrilateral(double edge1, double edge2, double edge3, double edge4) {
@@ -13,4 +13,6 @@ public class Quadrilateral {
     public double getPerimeter() {
         return edge1 + edge2 + edge3 + edge4;
     }
+
+    public abstract double getArea();
 }
