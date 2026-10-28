@@ -9,6 +9,12 @@ public class Runner {
         System.out.println(r.getPerimeter());
         System.out.println(s.getArea());
         System.out.println(r.getArea());
+        System.out.println(Runner.isAreaBiggerThan(s, r));
+        System.out.println(Runner.isAreaBiggerThan(r, s));
 
+    }
+
+    static boolean isAreaBiggerThan(Quadrilateral q1, Quadrilateral q2) {
+        return q1.getArea() > q2.getArea();
     }
 }
