@@ -22,6 +22,14 @@ public class Courier {
     public void delivery(Parcel p) {
         System.out.println("shipping "
                 + p.label() + ": " + p.cost() + " EUR");
+        //Se ho un pacco fragile, controllo se e' stato imballato
+        if(p instanceof FragileParcel) {//true iff p e' istanza di FragileParcel o di una sottoclasse
+            FragileParcel p1 = (FragileParcel) p;
+            if(p1.isWrapped() == false) {
+                p1.wrap();
+            }
+        }
+        //Se non e' stato imballato, lo imballo prima di consegnarlo
         earned_money = earned_money + p.cost();
     }
 

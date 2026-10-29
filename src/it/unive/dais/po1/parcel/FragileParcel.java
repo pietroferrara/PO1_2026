@@ -12,6 +12,10 @@ public class FragileParcel extends Parcel{
         wrap_count++;
     }
 
+    public boolean isWrapped() {
+        return wrap_count > 0;
+    }
+
     @Override
     public double cost() {
         return 1.5*super.cost();
