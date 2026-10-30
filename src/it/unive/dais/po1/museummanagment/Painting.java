@@ -1,28 +1,34 @@
 package it.unive.dais.po1.museummanagment;
 
-public class Painting extends Artwork implements Lendable {
-
+public class Painting extends Artwork implements Lendable, Exhibitable {
     private String borrower = null;
 
-    public Painting(String title, String artist, int year) {
+    private final int insuredValue;
+
+
+    public Painting(String title, String artist, int year, int insuredValue) {
         super(title, artist, year);
+        this.insuredValue = insuredValue;
     }
 
-    public boolean lendTo(String museum) {
-        if (this.borrower == null) {
-            this.borrower = museum;
-            return true;
-        }
-        else return false;
-    }
-    public String giveBack() {
-        String borrower = this.borrower;
-        this.borrower = null;
+
+    @Override
+    public String getBorrower() {
         return borrower;
     }
 
-    public boolean isOnLoan() {
-        return this.borrower != null;
+    @Override
+    public void setBorrower(String borrower) {
+        this.borrower = borrower;
     }
 
+    @Override
+    public int insuredValue() {
+        return this.insuredValue;
+    }
+
+    @Override
+    public String label() {
+        return Lendable.super.label() + " and "+Exhibitable.super.label();
+    }
 }

@@ -2,12 +2,14 @@ package it.unive.dais.po1.museummanagment;
 
 public class Runner {
     public static void main(String[] args) {
-        Painting p = new Painting("Guernica", "Picasso", 1940);
+        Painting p = new Painting("Guernica", "Picasso", 1940, 10000000);
         Showcase s = new Showcase("PeggyGuggenheim");
         System.out.println(status(p));
         Runner.lendTo(p, "Louvre");
         System.out.println(status(p));
         Runner.lendTo(s, "Louvre");
+
+        //Lendable l = new Lendable(); Compile ERROR
 
 
         //p.lendTo("Louvre");

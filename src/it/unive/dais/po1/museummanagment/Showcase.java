@@ -1,6 +1,6 @@
 package it.unive.dais.po1.museummanagment;
 
-public class Showcase implements Lendable {
+public class Showcase implements Loanable {
     private String borrower = null;
     private int numberOfPieces = 0;
     private String location;
@@ -9,21 +9,18 @@ public class Showcase implements Lendable {
         this.location = location;
     }
 
-    public boolean lendTo(String museum) {
-        if (this.borrower == null) {
-            this.borrower = museum;
-            return true;
-        }
-        else return false;
-    }
-    public String giveBack() {
-        String borrower = this.borrower;
-        this.borrower = null;
-        return borrower;
+    @Override
+    public String getBorrower() {
+        return this.borrower;
     }
 
-    public boolean isOnLoan() {
-        return this.borrower != null;
+    @Override
+    public void setBorrower(String borrower) {
+        this.borrower = borrower;
     }
 
+    @Override
+    public int insuredValue() {
+        return 0;
+    }
 }

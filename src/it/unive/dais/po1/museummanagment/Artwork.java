@@ -21,6 +21,8 @@ public abstract class Artwork {
     }
 
     public final String describe() {
-        return title + " by " + artist + " (" + year + ")";
+        return title + " by " + artist + " (" + year + "), "+this.label();
     }
+
+    public abstract String label();
 }
