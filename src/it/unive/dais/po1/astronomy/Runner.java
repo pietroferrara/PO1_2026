@@ -10,6 +10,39 @@ public class Runner {
         Planet p = planets.get(0);
         Star s = new Star("Sirius", -1.5, "Canis Major");
         Planet p1 = new Planet("Venus", 2.5, 0);
+        planets.add(p1);
+
+        Catalog<CelestialBody> bodies = new Catalog<>();
+        bodies.add(p);
+        bodies.add(s);
+        bodies.add(p1);
+
+        System.out.println(Sky.brightest(bodies));
+        System.out.println(Sky.brightest(planets));
+/*        CelestialBody[] bodiesArray = new CelestialBody[3];
+        bodiesArray[0] = p;
+        bodiesArray[1] = s;
+        bodiesArray[2] = p1;
+
+      Planet[] planetsArray = new Planet[2];
+        planetsArray[0] = new Planet("Mars", 1.5, 2);
+        planetsArray[1] = p1;
+
+
+        System.out.println(Catalog.concatenate(bodies));
+
+        Sky.placeAStar(bodiesArray);
+
+        System.out.println("The brightest body is: "+Sky.brightest(bodies).getName());
+
+        Sky.placeAStar(planetsArray);
+
+        System.out.println("The brightest body is: "+Sky.brightestArray(bodiesArray).getName());
+
+        //System.out.println("The brightest body is: "+(Sky.brightest((Catalog<CelestialBody>)  planets)).getName()); DO NOT COMPILE, GENERICS ARE INVARIANT
+
+        System.out.println("The brightest body is: "+Sky.brightestArray(planetsArray).getName());
+
 
         Comparator<CelestialBody> c = new Comparator<>(p, s);
         System.out.println(c.brighter().getName());
@@ -17,10 +50,10 @@ public class Runner {
         Comparator<Planet> c1 = new Comparator<>(p1, p);
         System.out.println(c1.brighter().getName());
 
-        c = c1;
-        c1 = c;
+        //c = c1; DON'T COMPILE: GENERICS ARE INVARIANT
+        //c1 = c; DON'T COMPILE: GENERICS ARE INVARIANT
 
-
+*/
         /*Catalog<Planet> catalog = Catalog.<Planet>of(new Planet("Mars", 1.5, 2));
         Catalog<Planet> catalog1 = new Catalog();
         Catalog<Planet> catalog2 = new Catalog<>();

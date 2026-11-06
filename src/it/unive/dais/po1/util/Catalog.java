@@ -52,4 +52,14 @@ public class Catalog<T> {
             return null;
         else return catalog.get(catalog.size()-1);
     }
+
+    public static String concatenate(Catalog<?> s) {
+        String result = "";
+        Node<?> node = s.head;
+        while (node != null) {
+            result = result + " " + node.getBody();
+            node = node.getNext();
+        }
+        return result;
+    }
 }
