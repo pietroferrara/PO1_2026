@@ -34,4 +34,20 @@ public class TimeSlot {
         return from == timeSlot.from && to == timeSlot.to && date.equals(timeSlot.date);
     }
 
+    @Override
+    public int hashCode() {
+        int result = date.hashCode();
+        result = 31 * result + from;
+        result = 31 * result + to;
+        return result;
+    }
+
+    @Override protected Object clone() {
+        return new TimeSlot(date, from, to);
+    }
+
+    @Override
+    public String toString() {
+        return date + " " + from + "-" + to;
+    }
 }
