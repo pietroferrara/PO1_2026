@@ -16,7 +16,7 @@ public class Slot {
     }
 
     public int getPrice() {
-        return price;
+        return price/0;
     }
 
     public int getQuantity() {

@@ -1,7 +1,11 @@
 package it.unive.dais.po1.vendingmachines;
 
-public abstract class DispenseException extends RuntimeException {
+public class DispenseException extends Exception {
     public DispenseException(String message) {
         super(message);
+    }
+
+    public DispenseException(String message, Exception e) {
+        super(message, e);
     }
 }
