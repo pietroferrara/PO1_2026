@@ -12,4 +12,8 @@ public enum Unit {
     public double toKm(double n) {
         return n * perKm;
     }
+
+    public double fromKm(double n) {
+        return n / perKm;
+    }
 }
