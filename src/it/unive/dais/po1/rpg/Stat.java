@@ -1,0 +1,13 @@
+package it.unive.dais.po1.rpg;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Stat {
+    int min();
+    int max();
+}

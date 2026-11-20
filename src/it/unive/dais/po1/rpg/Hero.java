@@ -22,4 +22,17 @@ public abstract class Hero {
     public int getMaxHitPoints() {
         return maxHitPoints;
     }
+
+    public void takeDamage(int damage) {
+        hitPoints = Math.max(0, hitPoints-damage);
+    }
+
+    public abstract int attack();
+
+    @Override
+    public String toString() {
+        return this.getClass().getName() +
+                " '" + name + "\' (hitPoints=" + hitPoints +
+                ", maxHitPoints=" + maxHitPoints + ')';
+    }
 }
